@@ -1,0 +1,30 @@
+server:
+  port: 0
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: civicpulse-backend-test
+  datasource:
+    url: jdbc:h2:mem:civicpulsetest;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+    show-sql: false
+  flyway:
+    enabled: false
+
+app:
+  jwt:
+    secret: 4c8b92b6a55e2d8e578c73d9e83f21a4f0923d8c11e749a5b3f81e62a0459c27
+    expiration-ms: 3600000
+  ai:
+    duplicate-distance-meters-threshold: 75.0
+    duplicate-similarity-threshold: 0.50
+  storage:
+    upload-dir: ./target/test-uploads
